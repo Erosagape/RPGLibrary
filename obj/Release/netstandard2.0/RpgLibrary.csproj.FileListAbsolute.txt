@@ -1,0 +1,9 @@
+D:\SourceCode\RpgLibrary\bin\Release\netstandard2.0\RpgLibrary.deps.json
+D:\SourceCode\RpgLibrary\bin\Release\netstandard2.0\RpgLibrary.dll
+D:\SourceCode\RpgLibrary\bin\Release\netstandard2.0\RpgLibrary.pdb
+D:\SourceCode\RpgLibrary\obj\Release\netstandard2.0\RpgLibrary.csproj.AssemblyReference.cache
+D:\SourceCode\RpgLibrary\obj\Release\netstandard2.0\RpgLibrary.AssemblyInfoInputs.cache
+D:\SourceCode\RpgLibrary\obj\Release\netstandard2.0\RpgLibrary.AssemblyInfo.cs
+D:\SourceCode\RpgLibrary\obj\Release\netstandard2.0\RpgLibrary.csproj.CoreCompileInputs.cache
+D:\SourceCode\RpgLibrary\obj\Release\netstandard2.0\RpgLibrary.dll
+D:\SourceCode\RpgLibrary\obj\Release\netstandard2.0\RpgLibrary.pdb
