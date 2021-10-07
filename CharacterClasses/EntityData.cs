@@ -43,16 +43,16 @@ namespace RpgLibrary.CharacterClasses
         }
         public override string ToString()
         {
-            string str = "Name - " + EntityName + ", ";
-            str += "Strength = " + Strength.ToString() + ", ";
-            str += "Dexterity = " + Dexterity.ToString() + ", ";
-            str += "Cunning = " + Cunning.ToString() + ", ";
-            str += "Willpower = " + WillPower.ToString() + ", ";
-            str += "Magic = " + Magic.ToString() + ", ";
-            str += "Constitution = " + Constitution.ToString() + ", ";
-            str += "Health Formula = " + HealthFormula.ToString() + ", ";
-            str += "Stamina Formula = " + StaminaFormula.ToString() + ", ";
-            str += "Magic Formula = " + MagicFormula.ToString() + ", ";
+            string str =  EntityName + ", ";
+            str += Strength.ToString() + ", ";
+            str += Dexterity.ToString() + ", ";
+            str += Cunning.ToString() + ", ";
+            str += WillPower.ToString() + ", ";
+            str += Magic.ToString() + ", ";
+            str += Constitution.ToString() + ", ";
+            str += HealthFormula.ToString() + ", ";
+            str += StaminaFormula.ToString() + ", ";
+            str += MagicFormula.ToString() + ", ";
 
             return str;
         }
