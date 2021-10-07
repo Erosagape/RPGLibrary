@@ -38,6 +38,7 @@ namespace RpgEditor
         public FormMain()
         {
             InitializeComponent();
+            this.FormClosing += FormMain_FormClosing;
             newGameToolStripMenuItem.Click += NewGameToolStripMenuItem_Click;
             openGameToolStripMenuItem.Click += OpenGameToolStripMenuItem_Click;
             saveGameToolStripMenuItem.Click += SaveGameToolStripMenuItem_Click;
@@ -46,6 +47,17 @@ namespace RpgEditor
             armorsToolStripMenuItem.Click += ArmorsToolStripMenuItem_Click;
             shieldsToolStripMenuItem.Click += ShieldsToolStripMenuItem_Click;
             weaponsToolStripMenuItem.Click += WeaponsToolStripMenuItem_Click;
+        }
+
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            DialogResult dlg = MessageBox.Show(
+                "Unsave changes will be lost, are you sure you want to exit?",
+                "Exit?",
+                MessageBoxButtons.YesNo
+                );
+            if (dlg == DialogResult.No)
+                e.Cancel = true;
         }
 
         private void WeaponsToolStripMenuItem_Click(object sender, EventArgs e)
@@ -252,6 +264,11 @@ namespace RpgEditor
         }
 
         private void itemsToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void openGameToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
 
         }

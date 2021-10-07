@@ -70,30 +70,31 @@ namespace RpgEditor
             // newGameToolStripMenuItem
             // 
             this.newGameToolStripMenuItem.Name = "newGameToolStripMenuItem";
-            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.newGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.newGameToolStripMenuItem.Text = "&New Game";
             // 
             // openGameToolStripMenuItem
             // 
             this.openGameToolStripMenuItem.Name = "openGameToolStripMenuItem";
-            this.openGameToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.openGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.openGameToolStripMenuItem.Text = "&Open Game";
+            this.openGameToolStripMenuItem.Click += new System.EventHandler(this.openGameToolStripMenuItem_Click_1);
             // 
             // saveGameToolStripMenuItem
             // 
             this.saveGameToolStripMenuItem.Name = "saveGameToolStripMenuItem";
-            this.saveGameToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.saveGameToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.saveGameToolStripMenuItem.Text = "&Save Game";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(134, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.exitToolStripMenuItem.Text = "E&xit";
             // 
             // classesToolStripMenuItem
@@ -112,7 +113,7 @@ namespace RpgEditor
             // 
             this.itemsToolStripMenuItem.Enabled = false;
             this.itemsToolStripMenuItem.Name = "itemsToolStripMenuItem";
-            this.itemsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.itemsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.itemsToolStripMenuItem.Text = "&Items";
             this.itemsToolStripMenuItem.Click += new System.EventHandler(this.itemsToolStripMenuItem_Click);
             // 
@@ -120,20 +121,20 @@ namespace RpgEditor
             // 
             this.weaponsToolStripMenuItem.Enabled = false;
             this.weaponsToolStripMenuItem.Name = "weaponsToolStripMenuItem";
-            this.weaponsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.weaponsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.weaponsToolStripMenuItem.Text = "&Weapons";
             // 
             // armorsToolStripMenuItem
             // 
             this.armorsToolStripMenuItem.Enabled = false;
             this.armorsToolStripMenuItem.Name = "armorsToolStripMenuItem";
-            this.armorsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.armorsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.armorsToolStripMenuItem.Text = "&Armors";
             // 
             // shieldsToolStripMenuItem
             // 
             this.shieldsToolStripMenuItem.Name = "shieldsToolStripMenuItem";
-            this.shieldsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.shieldsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
             this.shieldsToolStripMenuItem.Text = "&Shields";
             // 
             // FormMain

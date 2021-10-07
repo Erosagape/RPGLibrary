@@ -12,8 +12,8 @@ namespace RpgEditor
 {
     public partial class FormDetails : Form
     {
-        protected static ItemDataManager ItemManager;
-        protected static EntityDataManager EntityDataManager;
+        public static ItemDataManager ItemManager;
+        public static EntityDataManager EntityDataManager;
         public FormDetails()
         {
             InitializeComponent();

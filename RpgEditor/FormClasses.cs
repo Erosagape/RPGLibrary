@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
-using System.Text;
+using System.IO;
 using System.Windows.Forms;
 using RpgLibrary.CharacterClasses;
 using RpgLibrary.ItemClasses;
@@ -45,12 +45,64 @@ namespace RpgEditor
         }
         private void BtnDelete_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if(lbDetails.SelectedItem != null)
+            {
+                string detail = (string)lbDetails.SelectedItem;
+                string[] parts = detail.Split(',');
+                string entity = parts[0].Trim();
+                DialogResult result = MessageBox.Show(
+"Are you sure you want to delete " + entity +"?",
+"Delete",
+MessageBoxButtons.YesNo
+                    );
+                if (result == DialogResult.Yes)
+                {
+                    lbDetails.Items.RemoveAt(lbDetails.SelectedIndex);
+                    EntityDataManager.EntityData.Remove(entity);
+                    if (File.Exists(FormMain.ClassPath + "/" + entity + ".xml"))
+                        File.Delete(FormMain.ClassPath + "/" + entity + ".xml");
+                }
+            }
         }
 
         private void BtnEdit_Click(object sender, EventArgs e)
         {
-            throw new NotImplementedException();
+            if (lbDetails.SelectedItem != null)
+            {
+                string detail = (string)lbDetails.SelectedItem;
+                string[] parts = detail.Split(',');
+                string entity = parts[0].Trim();
+                EntityData data = EntityDataManager.EntityData[entity];
+                EntityData newData = null;
+                using(FormEntityData frm=new FormEntityData())
+                {
+                    frm.EntityData = data;
+                    frm.ShowDialog();
+                    if (frm.EntityData == null)
+                        return;
+                    if (frm.EntityData.EntityName == entity)
+                    {
+                        EntityDataManager.EntityData[entity] = frm.EntityData;
+                        FillListBox();
+                        return;
+                    }
+                    newData = frm.EntityData;
+                }
+                DialogResult result = MessageBox.Show(
+                    "Name has changed. Do you want to add a new entry?",
+                    "New Entry",
+                    MessageBoxButtons.YesNo
+                    );
+                if (result == DialogResult.No)
+                    return;
+                if (EntityDataManager.EntityData.ContainsKey(newData.EntityName))
+                {
+                    MessageBox.Show("Entry already exists. Use edit to modify the entry");
+                    return;
+                }
+                lbDetails.Items.Add(newData);
+                EntityDataManager.EntityData.Add(newData.EntityName, newData);
+            }
         }
 
         private void BtnAdd_Click(object sender, EventArgs e)
