@@ -37,7 +37,7 @@ namespace RpgEditor
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(443, 329);
             this.Name = "FormArmor";
-            this.Text = "FormArmor";
+            this.Text = "Armors";
             this.ResumeLayout(false);
 
         }

@@ -21,18 +21,18 @@ namespace RpgEditor
             InitializeComponent();
             this.Load += FormEntityData_Load;
             this.FormClosing += FormEntityData_FormClosing;
-            btnOK.Click += BtnOK_Click;
-            btnCancel.Click += BtnCancel_Click;
+            btnOK.Click += btnOK_Click;
+            btnCancel.Click += btnCancel_Click;
         }
 
-        private void BtnCancel_Click(object sender, EventArgs e)
+        private void btnCancel_Click(object sender, EventArgs e)
         {
             entityData = null;
             this.FormClosing -= FormEntityData_FormClosing;
             this.Close();
         }
 
-        private void BtnOK_Click(object sender, EventArgs e)
+        private void btnOK_Click(object sender, EventArgs e)
         {
             if(string.IsNullOrEmpty(tbName.Text)||
                string.IsNullOrEmpty(tbHealth.Text) ||

@@ -37,10 +37,5 @@ namespace RpgEditor
         {
 
         }
-
-        private void btnOK_Click_1(object sender, EventArgs e)
-        {
-
-        }
     }
 }

@@ -69,7 +69,7 @@ MessageBoxButtons.YesNo
         {
             if (lbDetails.SelectedItem != null)
             {
-                string detail = (string)lbDetails.SelectedItem;
+                string detail = (string)lbDetails.SelectedItem.ToString();
                 string[] parts = detail.Split(',');
                 string entity = parts[0].Trim();
                 EntityData data = EntityDataManager.EntityData[entity];
@@ -113,6 +113,7 @@ MessageBoxButtons.YesNo
                 if(frm.EntityData != null)
                 {
                     lbDetails.Items.Add(frm.EntityData.ToString());
+                    EntityDataManager.EntityData.Add(frm.EntityData.EntityName, frm.EntityData);
                 }
             }
         }

@@ -162,14 +162,14 @@ namespace RpgEditor
             this.tbName.Location = new System.Drawing.Point(118, 13);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(130, 23);
-            this.tbName.TabIndex = 11;
+            this.tbName.TabIndex = 1;
             // 
             // tbType
             // 
             this.tbType.Location = new System.Drawing.Point(118, 43);
             this.tbType.Name = "tbType";
             this.tbType.Size = new System.Drawing.Size(130, 23);
-            this.tbType.TabIndex = 12;
+            this.tbType.TabIndex = 2;
             // 
             // mtbPrice
             // 
@@ -177,14 +177,14 @@ namespace RpgEditor
             this.mtbPrice.Mask = "00000";
             this.mtbPrice.Name = "mtbPrice";
             this.mtbPrice.Size = new System.Drawing.Size(130, 23);
-            this.mtbPrice.TabIndex = 13;
+            this.mtbPrice.TabIndex = 3;
             // 
             // nudWeight
             // 
             this.nudWeight.Location = new System.Drawing.Point(118, 104);
             this.nudWeight.Name = "nudWeight";
             this.nudWeight.Size = new System.Drawing.Size(130, 23);
-            this.nudWeight.TabIndex = 14;
+            this.nudWeight.TabIndex = 4;
             // 
             // cboHands
             // 
@@ -192,7 +192,7 @@ namespace RpgEditor
             this.cboHands.Location = new System.Drawing.Point(118, 135);
             this.cboHands.Name = "cboHands";
             this.cboHands.Size = new System.Drawing.Size(130, 23);
-            this.cboHands.TabIndex = 15;
+            this.cboHands.TabIndex = 5;
             // 
             // mtbAttackValue
             // 
@@ -200,7 +200,7 @@ namespace RpgEditor
             this.mtbAttackValue.Mask = "000";
             this.mtbAttackValue.Name = "mtbAttackValue";
             this.mtbAttackValue.Size = new System.Drawing.Size(92, 23);
-            this.mtbAttackValue.TabIndex = 16;
+            this.mtbAttackValue.TabIndex = 6;
             this.mtbAttackValue.MaskInputRejected += new System.Windows.Forms.MaskInputRejectedEventHandler(this.maskedTextBox2_MaskInputRejected);
             // 
             // mtbAttackModifier
@@ -209,7 +209,7 @@ namespace RpgEditor
             this.mtbAttackModifier.Mask = "000";
             this.mtbAttackModifier.Name = "mtbAttackModifier";
             this.mtbAttackModifier.Size = new System.Drawing.Size(91, 23);
-            this.mtbAttackModifier.TabIndex = 17;
+            this.mtbAttackModifier.TabIndex = 7;
             // 
             // mtbDamageModifier
             // 
@@ -217,7 +217,7 @@ namespace RpgEditor
             this.mtbDamageModifier.Mask = "000";
             this.mtbDamageModifier.Name = "mtbDamageModifier";
             this.mtbDamageModifier.Size = new System.Drawing.Size(91, 23);
-            this.mtbDamageModifier.TabIndex = 19;
+            this.mtbDamageModifier.TabIndex = 9;
             // 
             // mtbDamageValue
             // 
@@ -225,7 +225,7 @@ namespace RpgEditor
             this.mtbDamageValue.Mask = "000";
             this.mtbDamageValue.Name = "mtbDamageValue";
             this.mtbDamageValue.Size = new System.Drawing.Size(92, 23);
-            this.mtbDamageValue.TabIndex = 18;
+            this.mtbDamageValue.TabIndex = 8;
             // 
             // lbClasses
             // 
@@ -286,6 +286,7 @@ namespace RpgEditor
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(564, 335);
+            this.ControlBox = false;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnRemoveAllowed);

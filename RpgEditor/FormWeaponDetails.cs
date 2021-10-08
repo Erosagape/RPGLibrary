@@ -78,6 +78,11 @@ namespace RpgEditor
                 MessageBox.Show("Price must be an integer value");
                 return;
             }
+            if (!float.TryParse(nudWeight.Text, out weight))
+            {
+                MessageBox.Show("Weight must be an integer value");
+                return;
+            }
             if (!int.TryParse(mtbAttackValue.Text, out atkVal))
             {
                 MessageBox.Show("Attack value must be an integer value");
@@ -107,6 +112,7 @@ namespace RpgEditor
             weapon.Type = tbType.Text;
             weapon.Price = price;
             weapon.Weight = weight;
+            weapon.NumberHands = (Hands)cboHands.SelectedIndex;
             weapon.AttackValue = atkVal;
             weapon.AttackModifier = atkMod;
             weapon.DamageValue = dmgVal;

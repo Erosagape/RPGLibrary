@@ -218,6 +218,9 @@ namespace RpgEditor
             }
             frmWeapon.FillListBox();
             classesToolStripMenuItem.Enabled = true;
+            armorsToolStripMenuItem.Enabled = true;
+            weaponsToolStripMenuItem.Enabled = true;
+            shieldsToolStripMenuItem.Enabled = true;
             itemsToolStripMenuItem.Enabled = true;
         }
         private void NewGameToolStripMenuItem_Click(object sender, EventArgs e)
@@ -258,6 +261,9 @@ namespace RpgEditor
                         }
                     }
                     classesToolStripMenuItem.Enabled = true;
+                    armorsToolStripMenuItem.Enabled = true;
+                    weaponsToolStripMenuItem.Enabled = true;
+                    shieldsToolStripMenuItem.Enabled = true;
                     itemsToolStripMenuItem.Enabled = true;
                 }
             }

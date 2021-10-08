@@ -113,7 +113,7 @@ namespace RpgEditor
             this.mtbDefenseModifier.Mask = "000";
             this.mtbDefenseModifier.Name = "mtbDefenseModifier";
             this.mtbDefenseModifier.Size = new System.Drawing.Size(91, 23);
-            this.mtbDefenseModifier.TabIndex = 68;
+            this.mtbDefenseModifier.TabIndex = 6;
             // 
             // mtbDefenseValue
             // 
@@ -121,14 +121,14 @@ namespace RpgEditor
             this.mtbDefenseValue.Mask = "000";
             this.mtbDefenseValue.Name = "mtbDefenseValue";
             this.mtbDefenseValue.Size = new System.Drawing.Size(92, 23);
-            this.mtbDefenseValue.TabIndex = 67;
+            this.mtbDefenseValue.TabIndex = 5;
             // 
             // nudWeight
             // 
             this.nudWeight.Location = new System.Drawing.Point(98, 96);
             this.nudWeight.Name = "nudWeight";
             this.nudWeight.Size = new System.Drawing.Size(130, 23);
-            this.nudWeight.TabIndex = 65;
+            this.nudWeight.TabIndex = 4;
             // 
             // mtbPrice
             // 
@@ -136,21 +136,21 @@ namespace RpgEditor
             this.mtbPrice.Mask = "00000";
             this.mtbPrice.Name = "mtbPrice";
             this.mtbPrice.Size = new System.Drawing.Size(130, 23);
-            this.mtbPrice.TabIndex = 64;
+            this.mtbPrice.TabIndex = 3;
             // 
             // tbType
             // 
             this.tbType.Location = new System.Drawing.Point(98, 35);
             this.tbType.Name = "tbType";
             this.tbType.Size = new System.Drawing.Size(130, 23);
-            this.tbType.TabIndex = 63;
+            this.tbType.TabIndex = 2;
             // 
             // tbName
             // 
             this.tbName.Location = new System.Drawing.Point(98, 5);
             this.tbName.Name = "tbName";
             this.tbName.Size = new System.Drawing.Size(130, 23);
-            this.tbName.TabIndex = 62;
+            this.tbName.TabIndex = 1;
             // 
             // label11
             // 
@@ -238,6 +238,7 @@ namespace RpgEditor
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(624, 225);
+            this.ControlBox = false;
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnRemoveAllowed);

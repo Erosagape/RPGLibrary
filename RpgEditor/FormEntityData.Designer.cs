@@ -209,14 +209,14 @@ namespace RpgEditor
             this.tbStamina.Location = new System.Drawing.Point(113, 297);
             this.tbStamina.Name = "tbStamina";
             this.tbStamina.Size = new System.Drawing.Size(161, 23);
-            this.tbStamina.TabIndex = 17;
+            this.tbStamina.TabIndex = 18;
             // 
             // tbHealth
             // 
             this.tbHealth.Location = new System.Drawing.Point(113, 262);
             this.tbHealth.Name = "tbHealth";
             this.tbHealth.Size = new System.Drawing.Size(161, 23);
-            this.tbHealth.TabIndex = 18;
+            this.tbHealth.TabIndex = 17;
             // 
             // tbMana
             // 
