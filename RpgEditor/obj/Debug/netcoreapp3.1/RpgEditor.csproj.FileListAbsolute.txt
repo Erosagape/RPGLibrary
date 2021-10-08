@@ -66,3 +66,12 @@ D:\SourceCode\RpgLibrary\RpgEditor\obj\Debug\netcoreapp3.1\RpgEditor.FormWeapon.
 D:\SourceCode\RpgLibrary\RpgEditor\obj\Debug\netcoreapp3.1\RpgEditor.FormArmorDetails.resources
 D:\SourceCode\RpgLibrary\RpgEditor\obj\Debug\netcoreapp3.1\RpgEditor.FormShieldDetails.resources
 D:\SourceCode\RpgLibrary\RpgEditor\obj\Debug\netcoreapp3.1\RpgEditor.FormWeaponDetails.resources
+D:\SourceCode\RpgLibrary\RpgEditor\bin\Debug\netcoreapp3.1\MonoGame.Framework.dll
+D:\SourceCode\RpgLibrary\RpgEditor\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libSDL2-2.0.so.0
+D:\SourceCode\RpgLibrary\RpgEditor\bin\Debug\netcoreapp3.1\runtimes\linux-x64\native\libopenal.so.1
+D:\SourceCode\RpgLibrary\RpgEditor\bin\Debug\netcoreapp3.1\runtimes\osx\native\libSDL2-2.0.0.dylib
+D:\SourceCode\RpgLibrary\RpgEditor\bin\Debug\netcoreapp3.1\runtimes\osx\native\libopenal.1.dylib
+D:\SourceCode\RpgLibrary\RpgEditor\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\SDL2.dll
+D:\SourceCode\RpgLibrary\RpgEditor\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\soft_oal.dll
+D:\SourceCode\RpgLibrary\RpgEditor\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\SDL2.dll
+D:\SourceCode\RpgLibrary\RpgEditor\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\soft_oal.dll
