@@ -7,3 +7,13 @@ D:\SourceCode\RpgLibrary\obj\Release\netstandard2.0\RpgLibrary.AssemblyInfo.cs
 D:\SourceCode\RpgLibrary\obj\Release\netstandard2.0\RpgLibrary.csproj.CoreCompileInputs.cache
 D:\SourceCode\RpgLibrary\obj\Release\netstandard2.0\RpgLibrary.dll
 D:\SourceCode\RpgLibrary\obj\Release\netstandard2.0\RpgLibrary.pdb
+D:\playground\RpgLibrary\bin\Release\netstandard2.0\RpgLibrary.deps.json
+D:\playground\RpgLibrary\bin\Release\netstandard2.0\RpgLibrary.dll
+D:\playground\RpgLibrary\bin\Release\netstandard2.0\RpgLibrary.pdb
+D:\playground\RpgLibrary\obj\Release\netstandard2.0\RpgLibrary.csproj.AssemblyReference.cache
+D:\playground\RpgLibrary\obj\Release\netstandard2.0\RpgLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\playground\RpgLibrary\obj\Release\netstandard2.0\RpgLibrary.AssemblyInfoInputs.cache
+D:\playground\RpgLibrary\obj\Release\netstandard2.0\RpgLibrary.AssemblyInfo.cs
+D:\playground\RpgLibrary\obj\Release\netstandard2.0\RpgLibrary.csproj.CoreCompileInputs.cache
+D:\playground\RpgLibrary\obj\Release\netstandard2.0\RpgLibrary.dll
+D:\playground\RpgLibrary\obj\Release\netstandard2.0\RpgLibrary.pdb

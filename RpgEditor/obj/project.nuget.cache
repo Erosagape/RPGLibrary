@@ -1,15 +1,39 @@
 {
   "version": 2,
-  "dgSpecHash": "BPpUS0HrwBFCsCVPo23a3qW34ZzqfcfzVU1Uze2LZ1HctBWCvuAGmpkxy14I3ZsfnmdY5LoVuPrVaUtFwHNL/Q==",
+  "dgSpecHash": "HUIATOK11360/OLjX00XVtdsGyk/4dzeYel+WiuCgsnLZQSZWtQZ5exDfPz2cSdcbv/sZTPkow/WvamiP28u6g==",
   "success": true,
-  "projectFilePath": "D:\\SourceCode\\RpgLibrary\\RpgEditor\\RpgEditor.csproj",
+  "projectFilePath": "D:\\playground\\RpgLibrary\\RpgEditor\\RpgEditor.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Administrator\\.nuget\\packages\\assimpnet\\4.1.0\\assimpnet.4.1.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.netcore.platforms\\2.0.0\\microsoft.netcore.platforms.2.0.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\microsoft.win32.registry\\4.5.0\\microsoft.win32.registry.4.5.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\monogame.framework.content.pipeline\\3.8.0.1641\\monogame.framework.content.pipeline.3.8.0.1641.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\monogame.framework.content.pipeline.portable\\3.7.1.189\\monogame.framework.content.pipeline.portable.3.7.1.189.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\monogame.framework.desktopgl\\3.8.0.1641\\monogame.framework.desktopgl.3.8.0.1641.nupkg.sha512",
+    "C:\\Users\\Administrator\\.nuget\\packages\\monogame.framework.portable\\3.7.1.189\\monogame.framework.portable.3.7.1.189.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.security.accesscontrol\\4.5.0\\system.security.accesscontrol.4.5.0.nupkg.sha512",
     "C:\\Users\\Administrator\\.nuget\\packages\\system.security.principal.windows\\4.5.0\\system.security.principal.windows.4.5.0.nupkg.sha512"
   ],
-  "logs": []
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MonoGame.Framework.Content.Pipeline.Portable 3.7.1.189' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "MonoGame.Framework.Content.Pipeline.Portable",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'MonoGame.Framework.Portable 3.7.1.189' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETCoreApp,Version=v3.1'. This package may not be fully compatible with your project.",
+      "libraryId": "MonoGame.Framework.Portable",
+      "targetGraphs": [
+        ".NETCoreApp,Version=v3.1"
+      ]
+    }
+  ]
 }

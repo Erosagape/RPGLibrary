@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using RpgLibrary.SkillClasses;
+using RpgLibrary.SpellClasses;
+using RpgLibrary.TalentClasses;
 namespace RpgLibrary.CharacterClasses
 {
     public enum EntityGender
@@ -103,19 +105,60 @@ namespace RpgLibrary.CharacterClasses
             get { return experience; }
             private set { experience = value; }
         }
+        readonly Dictionary<string, Skill> skills;
+        public Dictionary<string,Skill> Skills
+        {
+            get { return skills; }
+        }
+        readonly List<Modifier> skillModifiers;
+        public List<Modifier> SkillModifiers
+        {
+            get { return skillModifiers; }
+        }
+        readonly Dictionary<string, Spell> spells;
+        public Dictionary<string, Spell> Spells
+        {
+            get { return spells; }
+        }
+        readonly List<Modifier> spellModifiers;
+        public List<Modifier> SpellModifiers
+        {
+            get { return spellModifiers; }
+        }
+        readonly Dictionary<string, Talent> talents;
+        public Dictionary<string, Talent> Talents
+        {
+            get { return talents; }
+        }
+        readonly List<Modifier> talentModifiers;
+        public List<Modifier> TalentModifiers
+        {
+            get { return talentModifiers; }
+        }
         private Entity()
         {
-            Strength = 0;
-            Dexterity = 0;
-            Cunning = 0;
-            Willpower = 0;
-            Magic = 0;
-            Constitution = 0;
+            Strength = 10;
+            Dexterity = 10;
+            Cunning = 10;
+            Willpower = 10;
+            Magic = 10;
+            Constitution = 10;
             health = new AttributePair(0);
             stamina = new AttributePair(0);
             mana = new AttributePair(0);
+            skills = new Dictionary<string, Skill>();
+            spells = new Dictionary<string, Spell>();
+            talents = new Dictionary<string, Talent>();
+            skillModifiers = new List<Modifier>();
+            spellModifiers = new List<Modifier>();
+            talentModifiers = new List<Modifier>();
         }
-        public Entity(string name,EntityData data,EntityGender gen,EntityType typ)
+        public Entity(
+            string name,
+            EntityData data,
+            EntityGender gen,
+            EntityType typ
+            ) : this()
         {
             EntityName = name;
             EntityClass = data.EntityName;
@@ -130,6 +173,15 @@ namespace RpgLibrary.CharacterClasses
             health = new AttributePair(0);
             stamina = new AttributePair(0);
             mana = new AttributePair(0);
+        }
+        public void Update(TimeSpan elapsedTime)
+        {
+            foreach (Modifier mod in skillModifiers)
+                mod.Update(elapsedTime);
+            foreach (Modifier mod in spellModifiers)
+                mod.Update(elapsedTime);
+            foreach (Modifier mod in talentModifiers)
+                mod.Update(elapsedTime);
         }
     }
 }

@@ -7,3 +7,13 @@ D:\SourceCode\RpgLibrary\bin\Debug\netstandard2.0\RpgLibrary.pdb
 D:\SourceCode\RpgLibrary\obj\Debug\netstandard2.0\RpgLibrary.dll
 D:\SourceCode\RpgLibrary\obj\Debug\netstandard2.0\RpgLibrary.pdb
 D:\SourceCode\RpgLibrary\obj\Debug\netstandard2.0\RpgLibrary.csproj.AssemblyReference.cache
+D:\playground\RpgLibrary\bin\Debug\netstandard2.0\RpgLibrary.deps.json
+D:\playground\RpgLibrary\bin\Debug\netstandard2.0\RpgLibrary.dll
+D:\playground\RpgLibrary\bin\Debug\netstandard2.0\RpgLibrary.pdb
+D:\playground\RpgLibrary\obj\Debug\netstandard2.0\RpgLibrary.csproj.AssemblyReference.cache
+D:\playground\RpgLibrary\obj\Debug\netstandard2.0\RpgLibrary.GeneratedMSBuildEditorConfig.editorconfig
+D:\playground\RpgLibrary\obj\Debug\netstandard2.0\RpgLibrary.AssemblyInfoInputs.cache
+D:\playground\RpgLibrary\obj\Debug\netstandard2.0\RpgLibrary.AssemblyInfo.cs
+D:\playground\RpgLibrary\obj\Debug\netstandard2.0\RpgLibrary.csproj.CoreCompileInputs.cache
+D:\playground\RpgLibrary\obj\Debug\netstandard2.0\RpgLibrary.dll
+D:\playground\RpgLibrary\obj\Debug\netstandard2.0\RpgLibrary.pdb
