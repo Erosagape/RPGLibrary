@@ -144,3 +144,10 @@ D:\playground\RpgLibrary\RpgEditor\bin\Debug\netcoreapp3.1\runtimes\win-x64\nati
 D:\playground\RpgLibrary\RpgEditor\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\soft_oal.dll
 D:\playground\RpgLibrary\RpgEditor\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\SDL2.dll
 D:\playground\RpgLibrary\RpgEditor\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\soft_oal.dll
+D:\playground\RpgLibrary\RpgEditor\obj\Debug\netcoreapp3.1\RpgEditor.FormKey.resources
+D:\playground\RpgLibrary\RpgEditor\obj\Debug\netcoreapp3.1\RpgEditor.FormKeyDetails.resources
+D:\playground\RpgLibrary\RpgEditor\obj\Debug\netcoreapp3.1\RpgEditor.FormChest.resources
+D:\playground\RpgLibrary\RpgEditor\obj\Debug\netcoreapp3.1\RpgEditor.FormChestDetails.resources
+D:\playground\RpgLibrary\RpgEditor\obj\Debug\netcoreapp3.1\RpgEditor.Properties.Resources.resources
+D:\playground\RpgLibrary\RpgEditor\obj\Debug\netcoreapp3.1\RpgEditor.FormSkill.resources
+D:\playground\RpgLibrary\RpgEditor\obj\Debug\netcoreapp3.1\RpgEditor.FormSkillDetails.resources

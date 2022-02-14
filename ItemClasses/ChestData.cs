@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using RpgLibrary.SkillClasses;
 namespace RpgLibrary.ItemClasses
 {
     public class ChestData
@@ -9,11 +9,13 @@ namespace RpgLibrary.ItemClasses
 
         #region Field Region
         public string Name;
-        public string TextureName;
+        public DifficultyLevel DifficultyLevel;        
         public bool IsTrapped;
         public bool IsLocked;
         public string TrapName;
         public string KeyName;
+        public string KeyType;
+        public int KeysRequired;
         public int MinGold;
         public int MaxGold;
         public Dictionary<string, string> ItemCollection;
@@ -30,11 +32,13 @@ namespace RpgLibrary.ItemClasses
         public override string ToString()
         {
             string toString = Name + ", ";
-            toString += TextureName + ", ";
-            toString += IsTrapped.ToString() + ", ";
+            toString += DifficultyLevel.ToString() + ", ";
             toString += IsLocked.ToString() + ", ";
+            toString += IsTrapped.ToString() + ", ";
             toString += TrapName + ", ";
             toString += KeyName + ", ";
+            toString += KeyType + ", ";
+            toString += KeysRequired.ToString() + ", ";
             toString += MinGold.ToString() + ", ";
             toString += MaxGold.ToString();
             foreach(KeyValuePair<string,string> pair in ItemCollection)

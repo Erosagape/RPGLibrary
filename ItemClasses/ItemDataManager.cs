@@ -6,11 +6,16 @@ namespace RpgLibrary.ItemClasses
 {
     public class ItemDataManager
     {
+        #region Field Region
         readonly Dictionary<string, ArmorData> armorData = new Dictionary<string, ArmorData>();
         readonly Dictionary<string, ShieldData> shieldData = new Dictionary<string, ShieldData>();
         readonly Dictionary<string, WeaponData> weaponData = new Dictionary<string, WeaponData>();
         readonly Dictionary<string, ReagentData> reagentData = new Dictionary<string, ReagentData>();
-        public Dictionary<string,ArmorData> ArmorData
+        readonly Dictionary<string, KeyData> keyData = new Dictionary<string, KeyData>();
+        readonly Dictionary<string, ChestData> chestData = new Dictionary<string, ChestData>();
+        #endregion
+        #region Property Region
+        public Dictionary<string, ArmorData> ArmorData
         {
             get { return armorData; }
         }
@@ -22,9 +27,26 @@ namespace RpgLibrary.ItemClasses
         {
             get { return weaponData; }
         }
-        public Dictionary<string,ReagentData> ReagentData
+        public Dictionary<string, ReagentData> ReagentData
         {
             get { return reagentData; }
         }
+        public Dictionary<string, KeyData> KeyData
+        {
+            get { return keyData; }
+        }
+        public Dictionary<string, ChestData> ChestData
+        {
+            get { return chestData; }
+        }
+
+        #endregion
+        #region Constructor Region
+        #endregion
+        #region Method Region
+        #endregion
+        #region Virtual Method region
+        #endregion
+
     }
 }

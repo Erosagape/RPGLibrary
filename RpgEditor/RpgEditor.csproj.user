@@ -7,6 +7,12 @@
     <Compile Update="FormArmorDetails.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="FormChest.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormChestDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="FormClasses.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -14,6 +20,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormEntityData.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormKey.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormKeyDetails.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormMain.cs">
@@ -26,6 +38,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormShieldDetails.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormSkill.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="FormSkillDetails.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="FormWeapon.cs">

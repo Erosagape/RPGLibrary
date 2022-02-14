@@ -41,11 +41,13 @@ namespace RpgLibrary.ItemClasses
         {
             ChestData data = new ChestData();
             data.Name = chestData.Name;
+            data.DifficultyLevel = chestData.DifficultyLevel;
             data.IsLocked = chestData.IsLocked;
-            data.IsTrapped = chestData.IsTrapped;
-            data.TextureName = chestData.TextureName;
+            data.IsTrapped = chestData.IsTrapped;            
             data.TrapName = chestData.TrapName;
             data.KeyName = chestData.KeyName;
+            data.KeyType = chestData.KeyType;
+            data.KeysRequired = chestData.KeysRequired;
             data.MinGold = chestData.MinGold;
             data.MaxGold = chestData.MaxGold;
             foreach (KeyValuePair<string, string> pair in chestData.ItemCollection)
