@@ -39,7 +39,7 @@ namespace RpgEditor
             this.ControlBox = false;
             this.MinimizeBox = false;
             this.Name = "FormSkill";
-            this.Text = "FormSkill";
+            this.Text = "Skills";
             this.ResumeLayout(false);
 
         }

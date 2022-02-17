@@ -37,12 +37,13 @@ namespace RpgEditor
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.itemsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.keysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.chestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.weaponsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.armorsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.shieldsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.classesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.keysToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.chestsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.skillsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -53,7 +54,8 @@ namespace RpgEditor
             this.itemsToolStripMenuItem,
             this.classesToolStripMenuItem,
             this.keysToolStripMenuItem,
-            this.chestsToolStripMenuItem});
+            this.chestsToolStripMenuItem,
+            this.skillsToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -113,6 +115,34 @@ namespace RpgEditor
             this.itemsToolStripMenuItem.Size = new System.Drawing.Size(48, 20);
             this.itemsToolStripMenuItem.Text = "&Items";
             // 
+            // weaponsToolStripMenuItem
+            // 
+            this.weaponsToolStripMenuItem.Enabled = false;
+            this.weaponsToolStripMenuItem.Name = "weaponsToolStripMenuItem";
+            this.weaponsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.weaponsToolStripMenuItem.Text = "&Weapons";
+            // 
+            // armorsToolStripMenuItem
+            // 
+            this.armorsToolStripMenuItem.Enabled = false;
+            this.armorsToolStripMenuItem.Name = "armorsToolStripMenuItem";
+            this.armorsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.armorsToolStripMenuItem.Text = "&Armors";
+            // 
+            // shieldsToolStripMenuItem
+            // 
+            this.shieldsToolStripMenuItem.Enabled = false;
+            this.shieldsToolStripMenuItem.Name = "shieldsToolStripMenuItem";
+            this.shieldsToolStripMenuItem.Size = new System.Drawing.Size(123, 22);
+            this.shieldsToolStripMenuItem.Text = "&Shields";
+            // 
+            // classesToolStripMenuItem
+            // 
+            this.classesToolStripMenuItem.Enabled = false;
+            this.classesToolStripMenuItem.Name = "classesToolStripMenuItem";
+            this.classesToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
+            this.classesToolStripMenuItem.Text = "&Classes";
+            // 
             // keysToolStripMenuItem
             // 
             this.keysToolStripMenuItem.Enabled = false;
@@ -127,33 +157,12 @@ namespace RpgEditor
             this.chestsToolStripMenuItem.Size = new System.Drawing.Size(54, 20);
             this.chestsToolStripMenuItem.Text = "C&hests";
             // 
-            // weaponsToolStripMenuItem
+            // skillsToolStripMenuItem
             // 
-            this.weaponsToolStripMenuItem.Enabled = false;
-            this.weaponsToolStripMenuItem.Name = "weaponsToolStripMenuItem";
-            this.weaponsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.weaponsToolStripMenuItem.Text = "&Weapons";
-            // 
-            // armorsToolStripMenuItem
-            // 
-            this.armorsToolStripMenuItem.Enabled = false;
-            this.armorsToolStripMenuItem.Name = "armorsToolStripMenuItem";
-            this.armorsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.armorsToolStripMenuItem.Text = "&Armors";
-            // 
-            // shieldsToolStripMenuItem
-            // 
-            this.shieldsToolStripMenuItem.Enabled = false;
-            this.shieldsToolStripMenuItem.Name = "shieldsToolStripMenuItem";
-            this.shieldsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.shieldsToolStripMenuItem.Text = "&Shields";
-            // 
-            // classesToolStripMenuItem
-            // 
-            this.classesToolStripMenuItem.Enabled = false;
-            this.classesToolStripMenuItem.Name = "classesToolStripMenuItem";
-            this.classesToolStripMenuItem.Size = new System.Drawing.Size(57, 20);
-            this.classesToolStripMenuItem.Text = "&Classes";
+            this.skillsToolStripMenuItem.Enabled = false;
+            this.skillsToolStripMenuItem.Name = "skillsToolStripMenuItem";
+            this.skillsToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
+            this.skillsToolStripMenuItem.Text = "&Skills";
             // 
             // FormMain
             // 
@@ -189,6 +198,7 @@ namespace RpgEditor
         private System.Windows.Forms.ToolStripMenuItem armorsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem shieldsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem classesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem skillsToolStripMenuItem;
     }
 }
 
