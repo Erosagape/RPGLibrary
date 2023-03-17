@@ -1,28 +1,28 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
-
 namespace RpgLibrary
 {
-    public struct Modifier
+    public class Modifier
     {
-
         #region Field Region
+        public string Modifying;
         public int Amount;
         public int Duration;
         public TimeSpan TimeLeft;
         #endregion
-        #region Property Region
-        #endregion
         #region Constructor Region
-        public Modifier(int amount)
+        public Modifier(string modifying, int amount)
         {
+            Modifying = modifying;
             Amount = amount;
             Duration = -1;
             TimeLeft = TimeSpan.Zero;
         }
-        public Modifier(int amount,int duration)
+        public Modifier(string modifying, int amount, int duration)
         {
+            Modifying = modifying;
             Amount = amount;
             Duration = duration;
             TimeLeft = TimeSpan.FromSeconds(duration);
@@ -41,8 +41,7 @@ namespace RpgLibrary
             }
         }
         #endregion
-        #region Virtual Method region
+        #region Virtual Method Region
         #endregion
-
     }
 }

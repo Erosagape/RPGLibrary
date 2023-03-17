@@ -143,3 +143,8 @@ D:\playground\RPGLibrary\XLevelEditor\obj\Debug\XLevelEditor.exe
 D:\playground\RPGLibrary\XLevelEditor\obj\Debug\XLevelEditor.pdb
 D:\playground\RPGLibrary\XLevelEditor\bin\Debug\MGRpgLibrary.dll
 D:\playground\RPGLibrary\XLevelEditor\bin\Debug\MGRpgLibrary.pdb
+D:\playground\RPGLibrary\XLevelEditor\obj\Debug\XLevelEditor.FormMain.resources
+D:\playground\RPGLibrary\XLevelEditor\obj\Debug\XLevelEditor.FormNewLevel.resources
+D:\playground\RPGLibrary\XLevelEditor\obj\Debug\XLevelEditor.FormNewTileset.resources
+D:\playground\RPGLibrary\XLevelEditor\bin\Debug\Content\cursor.png
+D:\playground\RPGLibrary\XLevelEditor\bin\Debug\Content\grid.png

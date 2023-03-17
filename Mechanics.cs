@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-
+using RpgLibrary.CharacterClasses;
+using RpgLibrary.SkillClasses;
 namespace RpgLibrary
 {
     public enum DieType
@@ -25,6 +26,50 @@ namespace RpgLibrary
         #endregion
         #region Virtual Method region
         #endregion
+        public static bool UseSkill(Skill skill, Entity entity, DifficultyLevel difficulty)
+        {
+            bool result = false;
+            int target = skill.SkillValue + (int)difficulty;
+            foreach (string s in skill.ClassModifiers.Keys)
+            {
+                if (s == entity.EntityClass)
 
+                {
+                    target += skill.ClassModifiers[s];
+                }
+            }
+            foreach (Modifier m in entity.SkillModifiers)
+            {
+                if (m.Modifying == skill.SkillName)
+                {
+                    target += m.Amount;
+                }
+            }
+            string lower = skill.PrimaryAttribute.ToLower();
+            switch (lower)
+            {
+                case "strength":
+                    target += Skill.AttributeModifier(entity.Strength);
+                    break;
+                case "dexterity":
+                    target += Skill.AttributeModifier(entity.Dexterity);
+                    break;
+                case "cunning":
+                    target += Skill.AttributeModifier(entity.Cunning);
+                    break;
+                case "willpower":
+                    target += Skill.AttributeModifier(entity.Willpower);
+                    break;
+                case "magic":
+                    target += Skill.AttributeModifier(entity.Magic);
+                    break;
+                case "constitution":
+                    target += Skill.AttributeModifier(entity.Constitution);
+                    break;
+            }
+            if (Mechanics.RollDie(DieType.D100) <= target)
+                result = true;
+            return result;
+        }
     }
 }

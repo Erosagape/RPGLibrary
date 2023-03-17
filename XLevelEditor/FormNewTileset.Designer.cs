@@ -36,6 +36,10 @@ protected override void Dispose(bool disposing)
             this.mtbTilesHigh = new System.Windows.Forms.MaskedTextBox();
             this.btnOK = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
+            this.mtbTileWidth = new System.Windows.Forms.MaskedTextBox();
+            this.mtbTileHeight = new System.Windows.Forms.MaskedTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTilesetName
@@ -51,7 +55,7 @@ protected override void Dispose(bool disposing)
             // tbTilesetName
             // 
             this.tbTilesetName.Location = new System.Drawing.Point(116, 4);
-            this.tbTilesetName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbTilesetName.Margin = new System.Windows.Forms.Padding(2);
             this.tbTilesetName.Name = "tbTilesetName";
             this.tbTilesetName.Size = new System.Drawing.Size(76, 20);
             this.tbTilesetName.TabIndex = 1;
@@ -70,7 +74,7 @@ protected override void Dispose(bool disposing)
             // 
             this.tbTilesetImage.Enabled = false;
             this.tbTilesetImage.Location = new System.Drawing.Point(116, 28);
-            this.tbTilesetImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tbTilesetImage.Margin = new System.Windows.Forms.Padding(2);
             this.tbTilesetImage.Name = "tbTilesetImage";
             this.tbTilesetImage.Size = new System.Drawing.Size(76, 20);
             this.tbTilesetImage.TabIndex = 3;
@@ -78,7 +82,7 @@ protected override void Dispose(bool disposing)
             // btnSelectImage
             // 
             this.btnSelectImage.Location = new System.Drawing.Point(196, 28);
-            this.btnSelectImage.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSelectImage.Margin = new System.Windows.Forms.Padding(2);
             this.btnSelectImage.Name = "btnSelectImage";
             this.btnSelectImage.Size = new System.Drawing.Size(21, 19);
             this.btnSelectImage.TabIndex = 4;
@@ -89,7 +93,7 @@ protected override void Dispose(bool disposing)
             // lblTilesWide
             // 
             this.lblTilesWide.AutoSize = true;
-            this.lblTilesWide.Location = new System.Drawing.Point(13, 98);
+            this.lblTilesWide.Location = new System.Drawing.Point(13, 107);
             this.lblTilesWide.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTilesWide.Name = "lblTilesWide";
             this.lblTilesWide.Size = new System.Drawing.Size(100, 13);
@@ -98,8 +102,8 @@ protected override void Dispose(bool disposing)
             // 
             // mtbTilesWide
             // 
-            this.mtbTilesWide.Location = new System.Drawing.Point(116, 96);
-            this.mtbTilesWide.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtbTilesWide.Location = new System.Drawing.Point(116, 105);
+            this.mtbTilesWide.Margin = new System.Windows.Forms.Padding(2);
             this.mtbTilesWide.Mask = "000";
             this.mtbTilesWide.Name = "mtbTilesWide";
             this.mtbTilesWide.Size = new System.Drawing.Size(26, 20);
@@ -108,7 +112,7 @@ protected override void Dispose(bool disposing)
             // lblTilesHigh
             // 
             this.lblTilesHigh.AutoSize = true;
-            this.lblTilesHigh.Location = new System.Drawing.Point(15, 122);
+            this.lblTilesHigh.Location = new System.Drawing.Point(15, 131);
             this.lblTilesHigh.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTilesHigh.Name = "lblTilesHigh";
             this.lblTilesHigh.Size = new System.Drawing.Size(97, 13);
@@ -117,8 +121,8 @@ protected override void Dispose(bool disposing)
             // 
             // mtbTilesHigh
             // 
-            this.mtbTilesHigh.Location = new System.Drawing.Point(116, 119);
-            this.mtbTilesHigh.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.mtbTilesHigh.Location = new System.Drawing.Point(116, 128);
+            this.mtbTilesHigh.Margin = new System.Windows.Forms.Padding(2);
             this.mtbTilesHigh.Mask = "000";
             this.mtbTilesHigh.Name = "mtbTilesHigh";
             this.mtbTilesHigh.Size = new System.Drawing.Size(26, 20);
@@ -126,8 +130,8 @@ protected override void Dispose(bool disposing)
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(43, 142);
-            this.btnOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnOK.Location = new System.Drawing.Point(43, 151);
+            this.btnOK.Margin = new System.Windows.Forms.Padding(2);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(56, 19);
             this.btnOK.TabIndex = 13;
@@ -136,13 +140,49 @@ protected override void Dispose(bool disposing)
             // 
             // btnCancel
             // 
-            this.btnCancel.Location = new System.Drawing.Point(116, 142);
-            this.btnCancel.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancel.Location = new System.Drawing.Point(116, 151);
+            this.btnCancel.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(56, 19);
             this.btnCancel.TabIndex = 14;
             this.btnCancel.Text = "Cancel";
             this.btnCancel.UseVisualStyleBackColor = true;
+            // 
+            // mtbTileWidth
+            // 
+            this.mtbTileWidth.Location = new System.Drawing.Point(116, 52);
+            this.mtbTileWidth.Margin = new System.Windows.Forms.Padding(2);
+            this.mtbTileWidth.Mask = "000";
+            this.mtbTileWidth.Name = "mtbTileWidth";
+            this.mtbTileWidth.Size = new System.Drawing.Size(26, 20);
+            this.mtbTileWidth.TabIndex = 15;
+            // 
+            // mtbTileHeight
+            // 
+            this.mtbTileHeight.Location = new System.Drawing.Point(116, 76);
+            this.mtbTileHeight.Margin = new System.Windows.Forms.Padding(2);
+            this.mtbTileHeight.Mask = "000";
+            this.mtbTileHeight.Name = "mtbTileHeight";
+            this.mtbTileHeight.Size = new System.Drawing.Size(26, 20);
+            this.mtbTileHeight.TabIndex = 16;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(43, 58);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(55, 13);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Tile Width";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(46, 82);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(58, 13);
+            this.label2.TabIndex = 18;
+            this.label2.Text = "Tile Height";
             // 
             // FormNewTileset
             // 
@@ -150,6 +190,10 @@ protected override void Dispose(bool disposing)
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(244, 203);
             this.ControlBox = false;
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.mtbTileHeight);
+            this.Controls.Add(this.mtbTileWidth);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.mtbTilesHigh);
@@ -162,7 +206,7 @@ protected override void Dispose(bool disposing)
             this.Controls.Add(this.tbTilesetName);
             this.Controls.Add(this.lblTilesetName);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormNewTileset";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "New Tileset";
@@ -182,5 +226,9 @@ protected override void Dispose(bool disposing)
         private System.Windows.Forms.MaskedTextBox mtbTilesHigh;
         private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnCancel;
+        private System.Windows.Forms.MaskedTextBox mtbTileWidth;
+        private System.Windows.Forms.MaskedTextBox mtbTileHeight;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
