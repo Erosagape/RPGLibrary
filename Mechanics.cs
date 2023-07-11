@@ -23,6 +23,32 @@ namespace RpgLibrary
         {
             return random.Next(0, (int)die) + 1;
         }
+        public static int GetAttributeByString(Entity entity, string attribute)
+        {
+            int value = 0;
+            switch (attribute.ToLower())
+            {
+                case "strength":
+                    value = entity.Strength;
+                    break;
+                case "dexterity":
+                    value = entity.Dexterity;
+                    break;
+                case "cunning":
+                    value = entity.Cunning;
+                    break;
+                case "willpower":
+                    value = entity.Willpower;
+                    break;
+                case "magic":
+                    value = entity.Magic;
+                    break;
+                case "constitution":
+                    value = entity.Constitution;
+                    break;
+            }
+            return value;
+        }
         #endregion
         #region Virtual Method region
         #endregion
