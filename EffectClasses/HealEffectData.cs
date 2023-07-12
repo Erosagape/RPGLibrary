@@ -4,22 +4,18 @@ using System.Text;
 
 namespace RpgLibrary.EffectClasses
 {
-    public class BaseEffectDataManager
+    public enum HealType { Health, Mana, Stamina }
+    public class HealEffectData :BaseEffectData
     {
         #region Field Region
-        readonly Dictionary<string, BaseEffectData> effectData;
+        public HealType HealType;
+        public DieType DieType;
+        public int NumberOfDice;
+        public int Modifier;
         #endregion
         #region Property Region
-        public Dictionary<string, BaseEffectData> EffectData
-        {
-            get { return effectData; }
-        }
         #endregion
         #region Constructor Region
-        public BaseEffectDataManager()
-        {
-            effectData = new Dictionary<string, BaseEffectData>();
-        }
         #endregion
         #region Method Region
         #endregion
@@ -27,4 +23,3 @@ namespace RpgLibrary.EffectClasses
         #endregion
     }
 }
-
