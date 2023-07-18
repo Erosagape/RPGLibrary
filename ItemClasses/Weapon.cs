@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RpgLibrary.EffectClasses;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,11 +7,14 @@ namespace RpgLibrary.ItemClasses
 {
     public class Weapon :BaseItem
     {
+        #region Field Region
+
         Hands hands;
         int attackValue;
         int attackModifier;
-        int damageValue;
-        int damageModifier;
+        List<DamageEffectData> damageEffectDatas;
+        #endregion
+        #region Property Region
         public Hands NumberHands
         {
             get { return hands; }
@@ -26,60 +30,73 @@ namespace RpgLibrary.ItemClasses
             get { return attackModifier; }
             protected set { attackModifier = value; }
         }
-        public int DamageValue
+        public List<DamageEffectData> DamageEffects
         {
-            get { return damageValue; }
-            protected set { damageValue = value; }
+            get { return damageEffectDatas; }
+            protected set { damageEffectDatas = value; }
         }
-
-        public int DamageModifier
-        {
-            get { return damageModifier; }
-            protected set { damageModifier = value; }
-        }
-        public Weapon
-            (
-            string name,
-            string type,
-            int price,
-            float weight,
-            Hands hand,
-            int atk,
-            int atkMod,
-            int dmg,
-            int dmgMod,
-            params string[] allowClasses
-            ) : base(name, type, price, weight, allowClasses)
+        #endregion
+        #region Constructor Region
+        public Weapon(
+        string weaponName,
+        string weaponType,
+        int price,
+        float weight,
+        Hands hands,
+        int attackValue,
+        int attackModifier,
+        List<DamageEffectData> damageEffectData,
+        params string[] allowableClasses)
+        : base(weaponName, weaponType, price, weight, allowableClasses)
         {
             NumberHands = hands;
-            AttackValue = atk;
-            AttackModifier = atkMod;
-            DamageValue = dmg;
-            DamageModifier = dmgMod;
+            AttackValue = attackValue;
+            AttackModifier = attackModifier;
+            DamageEffects = damageEffectData;
         }
+        #endregion
+        #region Abstract Method Region
         public override object Clone()
         {
-            string[] allowClasses = new string[allowableClasses.Count];
+
+            string[] allowedClasses = new string[allowableClasses.Count];
+            List<DamageEffectData> effects = new List<DamageEffectData>();
             for (int i = 0; i < allowableClasses.Count; i++)
-                allowClasses[i] = allowableClasses[i];
-            Weapon wp = new Weapon(
-                Name,Type,Price,Weight,NumberHands,AttackValue,AttackModifier,DamageValue,DamageModifier,allowClasses
-                );
-            return wp;
+            {
+                allowedClasses[i] = allowableClasses[i];
+            }
+            foreach (DamageEffectData e in DamageEffects)
+            {
+                effects.Add(e);
+            }
+            Weapon weapon = new Weapon(
+            Name,
+            Type,
+            Price,
+            Weight,
+            NumberHands,
+            AttackValue,
+            AttackModifier,
+            effects,
+            allowedClasses);
+            return weapon;
         }
         public override string ToString()
         {
             string weaponString = base.ToString() + ", ";
             weaponString += NumberHands.ToString() + ", ";
             weaponString += AttackValue.ToString() + ", ";
-            weaponString += AttackModifier.ToString() + ", ";
-            weaponString += DamageValue.ToString() + ", ";
-            weaponString += DamageModifier.ToString();
-
-            foreach (string t in allowableClasses)
-                weaponString += ", " + t;
-
+            weaponString += AttackModifier.ToString();
+            foreach (DamageEffectData e in DamageEffects)
+            {
+                weaponString += ", " + e.ToString();
+            }
+            foreach (string s in allowableClasses)
+            {
+                weaponString += ", " + s;
+            }
             return weaponString;
         }
+        #endregion
     }
 }

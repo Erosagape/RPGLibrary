@@ -4,7 +4,11 @@ using System.Text;
 
 namespace RpgLibrary.EffectClasses
 {
-    public enum DamageType { Weapon, Poison, Disease, Fire, Earth, Water, Air }
+    public enum DamageType
+    {
+        Crushing, Piercing, Slashing, Magic, Poison, Disease, Fire, Water,
+        Air, Earth
+    }
     public enum AttackType { Health, Mana, Stamina }
     public class DamageEffectData :BaseEffectData
     {
@@ -23,6 +27,15 @@ namespace RpgLibrary.EffectClasses
         #region Method Region
         #endregion
         #region Virtual Method Region
+        public override string ToString()
+        {
+            string toString = Name + ", " + DamageType.ToString() + ", ";
+            toString += AttackType.ToString() + ", ";
+            toString += DieType.ToString() + ", ";
+            toString += NumberOfDice.ToString() + ", ";
+            toString += Modifier.ToString();
+            return toString;
+        }
         #endregion
     }
 }

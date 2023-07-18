@@ -1,4 +1,6 @@
-﻿using XLevelEditor;
+﻿using System;
+using System.Windows.Forms;
+using XLevelEditor;
 namespace XLevelEditor
 {
     partial class FormMain
@@ -31,6 +33,7 @@ protected override void Dispose(bool disposing)
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.tbMapLocation = new System.Windows.Forms.TextBox();
             this.lblCursor = new System.Windows.Forms.Label();
+            this.mapDisplay = new XLevelEditor.MapDisplay();
             this.tabProperties = new System.Windows.Forms.TabControl();
             this.tabTilesets = new System.Windows.Forms.TabPage();
             this.lblTilesets = new System.Windows.Forms.Label();
@@ -83,7 +86,6 @@ protected override void Dispose(bool disposing)
             this.x4ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.x8ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.mapDisplay = new XLevelEditor.MapDisplay();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -135,6 +137,17 @@ protected override void Dispose(bool disposing)
             this.lblCursor.TabIndex = 1;
             this.lblCursor.Text = "Map Loation";
             this.lblCursor.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // mapDisplay
+            // 
+            this.mapDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.mapDisplay.Location = new System.Drawing.Point(0, 0);
+            this.mapDisplay.Margin = new System.Windows.Forms.Padding(2);
+            this.mapDisplay.MouseHoverUpdatesOnly = false;
+            this.mapDisplay.Name = "mapDisplay";
+            this.mapDisplay.Size = new System.Drawing.Size(599, 524);
+            this.mapDisplay.TabIndex = 0;
+            this.mapDisplay.Text = "mapDisplay1";
             // 
             // tabProperties
             // 
@@ -382,7 +395,7 @@ protected override void Dispose(bool disposing)
             this.displayGridToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.gridColorsToolStripMenuItem});
             this.displayGridToolStripMenuItem.Name = "displayGridToolStripMenuItem";
-            this.displayGridToolStripMenuItem.Size = new System.Drawing.Size(137, 22);
+            this.displayGridToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.displayGridToolStripMenuItem.Text = "&Display Grid";
             // 
             // gridColorsToolStripMenuItem
@@ -574,22 +587,8 @@ protected override void Dispose(bool disposing)
             this.blushToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
             this.menuStrip1.Size = new System.Drawing.Size(754, 24);
-            this.menuStrip1.TabIndex = 0;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
-            // 
-            // mapDisplay
-            // 
-            this.mapDisplay.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.mapDisplay.Location = new System.Drawing.Point(0, 0);
-            this.mapDisplay.Margin = new System.Windows.Forms.Padding(2);
-            this.mapDisplay.MouseHoverUpdatesOnly = false;
-            this.mapDisplay.Name = "mapDisplay";
-            this.mapDisplay.Size = new System.Drawing.Size(599, 524);
-            this.mapDisplay.TabIndex = 0;
-            this.mapDisplay.Text = "mapDisplay1";
+            this.menuStrip1.TabIndex = 2;
             // 
             // FormMain
             // 
@@ -645,40 +644,40 @@ protected override void Dispose(bool disposing)
         private System.Windows.Forms.Timer controlTimer;
         private System.Windows.Forms.Label lblCursor;
         private System.Windows.Forms.TextBox tbMapLocation;
-        private System.Windows.Forms.ToolStripMenuItem levelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newLevelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openLevelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveLevelToolStripMenuItem;
-        private System.Windows.Forms.ToolStripSeparator toolStripMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem exitEditorToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem viewToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem displayGridToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem gridColorsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem blackToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem blueToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem redToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem greenToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem yellowToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem whiteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tilesetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newTilesetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openTilesetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem loadTilesetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem removeTilesetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveTilesetToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem mapLayerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem newLayerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem openLayerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem saveLayerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem charactersToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem chestsToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem keysToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem blushToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem x1ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem x2ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem x4ToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem x8ToolStripMenuItem;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private ToolStripMenuItem levelToolStripMenuItem;
+        private ToolStripMenuItem newLevelToolStripMenuItem;
+        private ToolStripMenuItem openLevelToolStripMenuItem;
+        private ToolStripMenuItem saveLevelToolStripMenuItem;
+        private ToolStripSeparator toolStripMenuItem1;
+        private ToolStripMenuItem exitEditorToolStripMenuItem;
+        private ToolStripMenuItem viewToolStripMenuItem;
+        private ToolStripMenuItem displayGridToolStripMenuItem;
+        private ToolStripMenuItem gridColorsToolStripMenuItem;
+        private ToolStripMenuItem blackToolStripMenuItem;
+        private ToolStripMenuItem blueToolStripMenuItem;
+        private ToolStripMenuItem redToolStripMenuItem;
+        private ToolStripMenuItem greenToolStripMenuItem;
+        private ToolStripMenuItem yellowToolStripMenuItem;
+        private ToolStripMenuItem whiteToolStripMenuItem;
+        private ToolStripMenuItem tilesetToolStripMenuItem;
+        private ToolStripMenuItem newTilesetToolStripMenuItem;
+        private ToolStripMenuItem openTilesetToolStripMenuItem;
+        private ToolStripMenuItem loadTilesetToolStripMenuItem;
+        private ToolStripMenuItem removeTilesetToolStripMenuItem;
+        private ToolStripMenuItem saveTilesetToolStripMenuItem;
+        private ToolStripMenuItem mapLayerToolStripMenuItem;
+        private ToolStripMenuItem newLayerToolStripMenuItem;
+        private ToolStripMenuItem openLayerToolStripMenuItem;
+        private ToolStripMenuItem saveLayerToolStripMenuItem;
+        private ToolStripMenuItem charactersToolStripMenuItem;
+        private ToolStripMenuItem chestsToolStripMenuItem;
+        private ToolStripMenuItem keysToolStripMenuItem;
+        private ToolStripMenuItem blushToolStripMenuItem;
+        private ToolStripMenuItem x1ToolStripMenuItem;
+        private ToolStripMenuItem x2ToolStripMenuItem;
+        private ToolStripMenuItem x4ToolStripMenuItem;
+        private ToolStripMenuItem x8ToolStripMenuItem;
+        private MenuStrip menuStrip1;
     }
 
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RpgLibrary.EffectClasses;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -14,27 +15,29 @@ namespace RpgLibrary.ItemClasses
         public Hands NumberHands;
         public int AttackValue;
         public int AttackModifier;
-        public int DamageValue;
-        public int DamageModifier;
+        public List<DamageEffectData> DamageEffectData = new List<DamageEffectData>();
         public string[] AllowableClasses;
         public WeaponData()
         {
-
         }
         public override string ToString()
         {
-            string str = Name + ", ";
-            str += Type + ", ";
-            str += Price.ToString() + ", ";
-            str += Weight.ToString() + ", ";
-            str += NumberHands.ToString() + ", ";
-            str += AttackValue.ToString() + ", "; 
-            str += AttackModifier.ToString() + ", ";
-            str += DamageValue.ToString() + ", ";
-            str += DamageModifier.ToString();
+            string toString = Name + ", ";
+            toString += Type + ", ";
+            toString += Price.ToString() + ", ";
+            toString += Weight.ToString() + ", ";
+            toString += NumberHands.ToString() + ", ";
+            toString += AttackValue.ToString() + ", ";
+            toString += AttackModifier.ToString();
+            foreach (DamageEffectData effect in DamageEffectData)
+            {
+                toString += ", " + DamageEffectData.ToString();
+            }
             foreach (string s in AllowableClasses)
-                str += ", " + s;
-            return str;
+            {
+                toString += ", " + s;
+            }
+            return toString;
         }
     }
 }

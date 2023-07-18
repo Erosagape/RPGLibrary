@@ -26,7 +26,7 @@ namespace XLevelEditor
 
         public static TileMap map;
         public static List<Tileset> tileSets = new List<Tileset>();
-        public static List<MapLayer> layers = new List<MapLayer>();
+        public static List<ILayer> layers = new List<ILayer>();
         public static Camera camera;
         public static Engine engine;
         public static int brushWidth;
@@ -84,13 +84,12 @@ namespace XLevelEditor
             if (result != DialogResult.OK)
                 return;
             string path = Path.GetDirectoryName(ofDialog.FileName);
-            LevelData newLevel;
-            MapData mapData;
+            LevelData newLevel = null;
+            MapData mapData = null;
             try
             {
                 newLevel = XnaSerializer.Deserialize<LevelData>(ofDialog.FileName);
-                mapData = XnaSerializer.Deserialize<MapData>(path + @"\Maps\" +
-                newLevel.MapName +
+                mapData = XnaSerializer.Deserialize<MapData>(path + @"\Maps\" + newLevel.MapName +
                 ".xml");
             }
             catch (Exception exc)
@@ -105,7 +104,6 @@ namespace XLevelEditor
             lbTileset.Items.Clear();
             clbLayers.Items.Clear();
             levelData = newLevel;
-
             foreach (TilesetData data in mapData.Tilesets)
             {
                 Texture2D texture = null;
@@ -116,6 +114,7 @@ namespace XLevelEditor
                 using (Stream stream = new FileStream(data.TilesetImageName, FileMode.Open,
                 FileAccess.Read))
                 {
+
                     texture = Texture2D.FromStream(GraphicsDevice, stream);
                     tileSets.Add(
                     new Tileset(
@@ -134,7 +133,15 @@ namespace XLevelEditor
             lbTileset.SelectedIndex = 0;
             clbLayers.SelectedIndex = 0;
             nudCurrentTile.Value = 0;
-            map = new TileMap(tileSets, layers);
+            map = new TileMap(tileSets[0], (MapLayer)layers[0]);
+            for (int i = 1; i < tileSets.Count; i++)
+            {
+                map.AddTileset(tileSets[i]);
+            }
+            for (int i = 1; i < layers.Count; i++)
+            {
+                map.AddLayer(layers[i]);
+            }
             tilesetToolStripMenuItem.Enabled = true;
             mapLayerToolStripMenuItem.Enabled = true;
             charactersToolStripMenuItem.Enabled = true;
@@ -144,26 +151,28 @@ namespace XLevelEditor
 
         private void saveLevelToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (layers.Count == 0)
+            if (map == null)
                 return;
             List<MapLayerData> mapLayerData = new List<MapLayerData>();
             for (int i = 0; i < clbLayers.Items.Count; i++)
             {
-                MapLayerData data = new MapLayerData(
-                clbLayers.Items[i].ToString(),
-                layers[i].Width,
-                layers[i].Height);
-                for (int y = 0; y < layers[i].Height; y++)
-                    for (int x = 0; x < layers[i].Width; x++)
-                        data.SetTile(
-                        x,
-                        y,
-                        layers[i].GetTile(x, y).TileIndex,
-                        layers[i].GetTile(x, y).Tileset);
-                mapLayerData.Add(data);
+                if (layers[i] is MapLayer)
+                {
+                    MapLayerData data = new MapLayerData(
+                    clbLayers.Items[i].ToString(),
+                    ((MapLayer)layers[i]).Width,
+                    ((MapLayer)layers[i]).Height);
+                    for (int y = 0; y < ((MapLayer)layers[i]).Height; y++)
+                        for (int x = 0; x < ((MapLayer)layers[i]).Width; x++)
+                            data.SetTile(
+                            x,
+                            y,
+                            ((MapLayer)layers[i]).GetTile(x, y).TileIndex,
+                            ((MapLayer)layers[i]).GetTile(x, y).Tileset);
+                    mapLayerData.Add(data);
+                }
             }
             MapData mapData = new MapData(levelData.MapName, tileSetData, mapLayerData);
-
             FolderBrowserDialog fbDialog = new FolderBrowserDialog();
             fbDialog.Description = "Select Game Folder";
             fbDialog.SelectedPath = Application.StartupPath;
@@ -180,6 +189,7 @@ namespace XLevelEditor
                 if (!Directory.Exists(LevelPath))
                     Directory.CreateDirectory(LevelPath);
                 if (!Directory.Exists(MapPath))
+
                     Directory.CreateDirectory(MapPath);
                 XnaSerializer.Serialize<LevelData>(LevelPath + levelData.LevelName + ".xml",
                 levelData);
@@ -285,8 +295,11 @@ namespace XLevelEditor
                 CheckFileExists = true
             };
             DialogResult result = ofDialog.ShowDialog();
+
             if (result != DialogResult.OK)
+            {
                 return;
+            }
             MapLayerData data = null;
             try
             {
@@ -296,7 +309,6 @@ namespace XLevelEditor
             {
                 MessageBox.Show(exc.Message, "Error reading map layer");
                 return;
-
             }
             for (int i = 0; i < clbLayers.Items.Count; i++)
             {
@@ -309,7 +321,13 @@ namespace XLevelEditor
             clbLayers.Items.Add(data.MapLayerName, true);
             layers.Add(MapLayer.FromMapLayerData(data));
             if (map == null)
-                map = new TileMap(tileSets, layers);
+            {
+                map = new TileMap(tileSets[0], (MapLayer)layers[0]);
+                for (int i = 1; i < tileSets.Count; i++)
+                {
+                    map.AddTileset(tileSets[i]);
+                }
+            }
         }
 
         void saveTilesetToolStripMenuItem_Click(object sender, EventArgs e)
@@ -341,39 +359,39 @@ namespace XLevelEditor
         {
             if (layers.Count == 0)
                 return;
-            SaveFileDialog sfDialog = new SaveFileDialog
+            if (layers[clbLayers.SelectedIndex] is MapLayer)
             {
-                Filter = "Map Layer Data (*.mldt)|*.mldt",
-                CheckPathExists = true,
-                OverwritePrompt = true,
-                ValidateNames = true
-            };
-            DialogResult result = sfDialog.ShowDialog();
-            if (result != DialogResult.OK)
-                return;
-            MapLayerData data = new MapLayerData(
-            clbLayers.SelectedItem.ToString(),
-            layers[clbLayers.SelectedIndex].Width,
-            layers[clbLayers.SelectedIndex].Height);
-            for (int y = 0; y < layers[clbLayers.SelectedIndex].Height; y++)
-            {
-                for (int x = 0; x < layers[clbLayers.SelectedIndex].Width; x++)
+                SaveFileDialog sfDialog = new SaveFileDialog();
+                sfDialog.Filter = "Map Layer Data (*.mldt)|*.mldt";
+                sfDialog.CheckPathExists = true;
+                sfDialog.OverwritePrompt = true;
+                sfDialog.ValidateNames = true;
+                DialogResult result = sfDialog.ShowDialog();
+                if (result != DialogResult.OK)
+                    return;
+                MapLayerData data = new MapLayerData(
+                clbLayers.SelectedItem.ToString(),
+                ((MapLayer)layers[clbLayers.SelectedIndex]).Width,
+                ((MapLayer)layers[clbLayers.SelectedIndex]).Height);
+                for (int y = 0; y < ((MapLayer)layers[clbLayers.SelectedIndex]).Height; y++)
                 {
-                    data.SetTile(
-                    x,
-
-                    y,
-                    layers[clbLayers.SelectedIndex].GetTile(x, y).TileIndex,
-                    layers[clbLayers.SelectedIndex].GetTile(x, y).Tileset);
+                    for (int x = 0; x < ((MapLayer)layers[clbLayers.SelectedIndex]).Width; x++)
+                    {
+                        data.SetTile(
+                        x,
+                        y,
+                        ((MapLayer)layers[clbLayers.SelectedIndex]).GetTile(x, y).TileIndex,
+                        ((MapLayer)layers[clbLayers.SelectedIndex]).GetTile(x, y).Tileset);
+                    }
                 }
-            }
-            try
-            {
-                XnaSerializer.Serialize<MapLayerData>(sfDialog.FileName, data);
-            }
-            catch (Exception exc)
-            {
-                MessageBox.Show(exc.Message, "Error saving map layer data");
+                try
+                {
+                    XnaSerializer.Serialize<MapLayerData>(sfDialog.FileName, data);
+                }
+                catch (Exception exc)
+                {
+                    MessageBox.Show(exc.Message, "Error saving map layer data");
+                }
             }
         }
         void whiteToolStripMenuItem_Click(object sender, EventArgs e)
@@ -548,19 +566,21 @@ namespace XLevelEditor
         private void SetTiles(Point tile, int tileIndex, int tileset)
         {
             int selected = clbLayers.SelectedIndex;
-            for (int y = 0; y < brushWidth; y++)
+            if (layers[selected] is MapLayer)
             {
-                if (tile.Y + y >= layers[selected].Height)
-                    break;
-
-                for (int x = 0; x < brushWidth; x++)
+                for (int y = 0; y < brushWidth; y++)
                 {
-                    if (tile.X + x < layers[selected].Width)
-                        layers[selected].SetTile(
-                        tile.X + x,
-                        tile.Y + y,
-                        tileIndex,
-                        tileset);
+                    if (tile.Y + y >= ((MapLayer)layers[selected]).Height)
+                        break;
+                    for (int x = 0; x < brushWidth; x++)
+                    {
+                        if (tile.X + x < ((MapLayer)layers[selected]).Width)
+                            ((MapLayer)layers[selected]).SetTile(
+                            tile.X + x,
+                            tile.Y + y,
+                            tileIndex,
+                            tileset);
+                    }
                 }
             }
         }
@@ -666,7 +686,7 @@ namespace XLevelEditor
         void newLayerToolStripMenuItem_Click(object sender, EventArgs e)
         {
             using (FormNewLayer frmNewLayer = new FormNewLayer(levelData.MapWidth,
-            levelData.MapHeight))
+ levelData.MapHeight))
             {
                 frmNewLayer.ShowDialog();
                 if (frmNewLayer.OKPressed)
@@ -675,51 +695,28 @@ namespace XLevelEditor
                     if (clbLayers.Items.Contains(data.MapLayerName))
                     {
                         MessageBox.Show("Layer with name " + data.MapLayerName + " exists.", "Existing layer");
-                    return;
+                        return;
                     }
                     MapLayer layer = MapLayer.FromMapLayerData(data);
+
                     clbLayers.Items.Add(data.MapLayerName, true);
                     clbLayers.SelectedIndex = clbLayers.Items.Count - 1;
                     layers.Add(layer);
                     if (map == null)
-                        map = new TileMap(tileSets, layers);
+                    {
+                        map = new TileMap(tileSets[0], (MapLayer)layers[0]);
+                        for (int i = 1; i < tileSets.Count; i++)
+                            map.AddTileset(tileSets[1]);
+                        for (int i = 1; i < layers.Count; i++)
+                            map.AddLayer(layers[1]);
+                    }
                     charactersToolStripMenuItem.Enabled = true;
                     chestsToolStripMenuItem.Enabled = true;
                     keysToolStripMenuItem.Enabled = true;
                 }
             }
-        }
-        #endregion
-        #region Map Display Event Handler Region
-        void mapDisplay_MouseUp(object sender, MouseEventArgs e)
-        {
-            if (e.Button == MouseButtons.Left)
-                isMouseDown = false;
-        }
-        void mapDisplay_MouseDown(object sender, MouseEventArgs e)
 
-        {
-            if (e.Button == MouseButtons.Left)
-                isMouseDown = true;
-        }
-        void mapDisplay_MouseMove(object sender, MouseEventArgs e)
-        {
-            mouse.X = e.X;
-            mouse.Y = e.Y;
-        }
-        void mapDisplay_MouseLeave(object sender, EventArgs e)
-        {
-            trackMouse = false;
-        }
-        void mapDisplay_MouseEnter(object sender, EventArgs e)
-        {
-            trackMouse = true;
-        }
-        #endregion
-
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
-
+            #endregion
         }
     }
 }
