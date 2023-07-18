@@ -4,17 +4,11 @@ using System.Text;
 
 namespace RpgLibrary.EffectClasses
 {
-    public enum DamageType { Weapon, Poison, Disease, Fire, Earth, Water, Air }
-    public enum AttackType { Health, Mana, Stamina }
-    public class DamageEffectData :BaseEffectData
+    public class ResistanceData
     {
         #region Field Region
-        public DamageType DamageType;
-        public AttackType AttackType;
-        public DieType DieType;
-        public int NumberOfDice;
-        public int Modifier;
-
+        public DamageType ResistanceType;
+        public int Amount;
         #endregion
         #region Property Region
         #endregion

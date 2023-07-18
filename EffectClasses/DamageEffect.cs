@@ -1,6 +1,7 @@
 ﻿using RpgLibrary.CharacterClasses;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace RpgLibrary.EffectClasses
@@ -40,7 +41,18 @@ namespace RpgLibrary.EffectClasses
         {
             int amount = modifier;
             for (int i = 0; i < numberOfDice; i++)
+            {
                 amount += Mechanics.RollDie(dieType);
+            }
+            foreach (Weakness weakness in entity.Weaknesses.Where(x => x.WeaknessType == damageType))
+            {
+                amount = weakness.Apply(amount);
+            }
+            foreach (Resistance resistance in entity.Resistances.Where(x => x.ResistanceType ==
+            damageType))
+            {
+                amount = resistance.Apply(amount);
+            }
             if (amount < 1)
                 amount = 1;
             switch (attackType)

@@ -110,6 +110,6 @@ namespace RpgLibrary.SpellClasses
         }
         #endregion
         #region Virtual Method Region
-        #endregion
-    }        
+        #endregion    
+    }            
 }

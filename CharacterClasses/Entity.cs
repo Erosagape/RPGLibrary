@@ -4,6 +4,7 @@ using System.Text;
 using RpgLibrary.SkillClasses;
 using RpgLibrary.SpellClasses;
 using RpgLibrary.TalentClasses;
+using RpgLibrary.EffectClasses;
 namespace RpgLibrary.CharacterClasses
 {
     public enum EntityGender
@@ -31,7 +32,7 @@ namespace RpgLibrary.CharacterClasses
         public EntityGender Gender
         {
             get { return gender; }
-            protected set { gender = value; }
+            private set { gender = value; }
         }
         private int strength;
         private int dexterity;
@@ -135,6 +136,19 @@ namespace RpgLibrary.CharacterClasses
         {
             get { return talentModifiers; }
         }
+        #region Resistance and Weakness Field and Property Region
+        private readonly List<Resistance> resistances;
+        public List<Resistance> Resistances
+        {
+            get { return resistances; }
+        }
+        private readonly List<Weakness> weaknesses;
+        public List<Weakness> Weaknesses
+        {
+            get { return weaknesses; }
+        }
+        #endregion
+
         private Entity()
         {
             Strength = 10;
@@ -152,6 +166,8 @@ namespace RpgLibrary.CharacterClasses
             skillModifiers = new List<Modifier>();
             spellModifiers = new List<Modifier>();
             talentModifiers = new List<Modifier>();
+            resistances = new List<Resistance>();
+            weaknesses = new List<Weakness>();
         }
         public Entity(
             string name,
