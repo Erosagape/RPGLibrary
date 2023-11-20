@@ -1,3 +1,5 @@
+D:\playground\RPGLibrary\XLevelEditor\bin\Debug\Content\cursor.png
+D:\playground\RPGLibrary\XLevelEditor\bin\Debug\Content\grid.png
 D:\playground\RPGLibrary\XLevelEditor\bin\Debug\XLevelEditor.exe.config
 D:\playground\RPGLibrary\XLevelEditor\bin\Debug\XLevelEditor.exe
 D:\playground\RPGLibrary\XLevelEditor\bin\Debug\XLevelEditor.pdb
@@ -100,6 +102,7 @@ D:\playground\RPGLibrary\XLevelEditor\bin\Debug\System.Xml.XPath.XDocument.dll
 D:\playground\RPGLibrary\XLevelEditor\bin\Debug\AssimpNet.dll
 D:\playground\RPGLibrary\XLevelEditor\bin\Debug\ATI.TextureConverter.dll
 D:\playground\RPGLibrary\XLevelEditor\bin\Debug\CppNet.dll
+D:\playground\RPGLibrary\XLevelEditor\bin\Debug\MGRpgLibrary.dll
 D:\playground\RPGLibrary\XLevelEditor\bin\Debug\Microsoft.Win32.Registry.dll
 D:\playground\RPGLibrary\XLevelEditor\bin\Debug\MonoGame.Forms.DX.dll
 D:\playground\RPGLibrary\XLevelEditor\bin\Debug\MonoGame.Framework.Content.Pipeline.dll
@@ -133,18 +136,13 @@ D:\playground\RPGLibrary\XLevelEditor\bin\Debug\SharpDX.Mathematics.xml
 D:\playground\RPGLibrary\XLevelEditor\bin\Debug\SharpDX.MediaFoundation.xml
 D:\playground\RPGLibrary\XLevelEditor\bin\Debug\SharpDX.XAudio2.xml
 D:\playground\RPGLibrary\XLevelEditor\bin\Debug\SharpDX.XInput.xml
-D:\playground\RPGLibrary\XLevelEditor\obj\Debug\XLevelEditor.csproj.AssemblyReference.cache
 D:\playground\RPGLibrary\XLevelEditor\obj\Debug\XLevelEditor.exe.config
+D:\playground\RPGLibrary\XLevelEditor\obj\Debug\XLevelEditor.FormMain.resources
+D:\playground\RPGLibrary\XLevelEditor\obj\Debug\XLevelEditor.FormNewLevel.resources
+D:\playground\RPGLibrary\XLevelEditor\obj\Debug\XLevelEditor.FormNewTileset.resources
 D:\playground\RPGLibrary\XLevelEditor\obj\Debug\XLevelEditor.Properties.Resources.resources
 D:\playground\RPGLibrary\XLevelEditor\obj\Debug\XLevelEditor.csproj.GenerateResource.cache
 D:\playground\RPGLibrary\XLevelEditor\obj\Debug\XLevelEditor.csproj.CoreCompileInputs.cache
 D:\playground\RPGLibrary\XLevelEditor\obj\Debug\XLevelEditor.csproj.CopyComplete
 D:\playground\RPGLibrary\XLevelEditor\obj\Debug\XLevelEditor.exe
 D:\playground\RPGLibrary\XLevelEditor\obj\Debug\XLevelEditor.pdb
-D:\playground\RPGLibrary\XLevelEditor\bin\Debug\MGRpgLibrary.dll
-D:\playground\RPGLibrary\XLevelEditor\bin\Debug\MGRpgLibrary.pdb
-D:\playground\RPGLibrary\XLevelEditor\obj\Debug\XLevelEditor.FormMain.resources
-D:\playground\RPGLibrary\XLevelEditor\obj\Debug\XLevelEditor.FormNewLevel.resources
-D:\playground\RPGLibrary\XLevelEditor\obj\Debug\XLevelEditor.FormNewTileset.resources
-D:\playground\RPGLibrary\XLevelEditor\bin\Debug\Content\cursor.png
-D:\playground\RPGLibrary\XLevelEditor\bin\Debug\Content\grid.png

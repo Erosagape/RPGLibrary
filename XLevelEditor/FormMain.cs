@@ -172,7 +172,7 @@ namespace XLevelEditor
                     mapLayerData.Add(data);
                 }
             }
-            MapData mapData = new MapData(levelData.MapName, tileSetData, mapLayerData);
+            MapData mapData = new MapData(levelData.MapName, tileSetData, mapLayerData,new CollisionLayer());
             FolderBrowserDialog fbDialog = new FolderBrowserDialog();
             fbDialog.Description = "Select Game Folder";
             fbDialog.SelectedPath = Application.StartupPath;
